@@ -1,1 +1,2 @@
-# tchallenge-participant-client-web
+# T-Challenge: Participant Web Client
+Web client for T-Challenge participants
