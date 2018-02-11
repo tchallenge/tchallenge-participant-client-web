@@ -1,0 +1,23 @@
+# Compiled output
+source/dist/
+source/out-tsc/
+source/tmp/
+
+# Node.js
+source/node_modules/
+npm-debug.log
+
+# TypeScript
+source/typings/
+
+# SASS
+source/.sass-cache/
+
+# IntelliJ IDEA
+source/.idea/
+source/**/*.iml
+
+# Miscellaneous
+source/**/*.log
+*.DS_Store
+Thumbs.db
