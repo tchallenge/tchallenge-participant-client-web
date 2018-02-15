@@ -1,0 +1,18 @@
+<div>
+    <div class="problem-introduction" *ngIf="problem.introduction">
+        {{problem.introduction}}
+    </div>
+    <div class="problem-question" *ngIf="problem.question">
+        {{problem.question}}
+    </div>
+    <div class="problem-options-container" *ngIf="problem.options">
+        <div class="problem-options" *ngFor="let option of problem.options">
+            <app-problem-option [option]="option" [readonly]="true"></app-problem-option>
+        </div>
+    </div>
+    <div class="problem-snippets-container" *ngIf="problem.snippets">
+        <div class="problem-snippet" *ngFor="let snippet of problem.snippets">
+            <app-problem-snippet [snippet]="snippet" [readonly]="true"></app-problem-snippet>
+        </div>
+    </div>
+</div>

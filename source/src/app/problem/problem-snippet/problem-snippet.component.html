@@ -1,0 +1,8 @@
+<div class="problem-snippet">
+    <pre *ngIf="readonly">{{snippet.content}}</pre>
+    <div *ngIf="!readonly">
+        <mat-form-field>
+            <textarea matInput [(ngModel)]="snippet.content"></textarea>
+        </mat-form-field>
+    </div>
+</div>

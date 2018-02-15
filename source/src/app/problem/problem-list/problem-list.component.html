@@ -1,0 +1,8 @@
+<div class="container problem-list">
+
+    <div *ngIf="problems">
+        <div *ngFor="let problem of problems">
+            <app-problem-item [problem]="problem"></app-problem-item>
+        </div>
+    </div>
+</div>

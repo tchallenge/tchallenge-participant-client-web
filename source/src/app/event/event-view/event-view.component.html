@@ -1,0 +1,16 @@
+<div class="container event-view">
+
+    <mat-form-field class="event-specializations">
+        <mat-select placeholder="Ваша специализация" [(value)]="selectedSpecialization">
+            <mat-option *ngFor="let spec of availableSpecializations" [value]="spec">{{spec.caption}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="event-maturities">
+        <mat-select placeholder="Ваш уровень" [(value)]="selectedMaturity">
+            <mat-option *ngFor="let spec of availableMaturities" [value]="spec">{{spec.caption}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" (click)="onApplyClicked($event)">Пройти тест</button>
+</div>

@@ -1,0 +1,50 @@
+<div class="container problem-creation-form">
+
+    <mat-form-field class="problem-introduction">
+        <textarea matInput
+                  placeholder="Вступление к задаче"
+                  [(ngModel)]="problem.introduction">
+        </textarea>
+    </mat-form-field>
+
+    <mat-form-field class="problem-question">
+        <textarea matInput
+                  placeholder="Вопрос к задаче"
+                  [(ngModel)]="problem.question">
+        </textarea>
+    </mat-form-field>
+
+    <mat-form-field class="problem-categories">
+        <mat-select placeholder="Категории" [(value)]="problem.categories" multiple>
+            <mat-option *ngFor="let option of categories" [value]="option">{{option}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="problem-difficulty">
+        <mat-select placeholder="Сложность" [(value)]="problem.difficulty">
+            <mat-option *ngFor="let option of difficulties" [value]="option">{{option}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="problem-expectation">
+        <mat-select placeholder="Тип ответа" [(value)]="problem.expectation">
+            <mat-option *ngFor="let option of expectations" [value]="option">{{option}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div *ngFor="let option of problem.options">
+        <app-problem-option [option]="option" [readonly]="false"></app-problem-option>
+    </div>
+    <button mat-button (click)="onAddOption($event)">Добавить опцию</button>
+
+    <div *ngFor="let snippet of problem.snippets">
+        <app-problem-snippet [snippet]="snippet" [readonly]="false"></app-problem-snippet>
+    </div>
+    <button mat-button (click)="onAddSnippet($event)">Добавить отрывок кода</button>
+
+    <button mat-button (click)="onSaveButtonClicked($event)">Сохранить</button>
+
+    <hr>
+
+    <app-problem-list></app-problem-list>
+</div>

@@ -1,0 +1,9 @@
+<div class="problem-option">
+    <mat-checkbox [(ngModel)]="option.correct"></mat-checkbox>
+    <span *ngIf="readonly">{{option.content}}</span>
+    <div *ngIf="!readonly">
+        <mat-form-field>
+            <input matInput [(ngModel)]="option.content">
+        </mat-form-field>
+    </div>
+</div>

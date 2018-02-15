@@ -1,0 +1,38 @@
+<div class="container signup-view">
+
+    <mat-form-field class="signup-quickname">
+        <input matInput
+               placeholder="Имя"
+               [(ngModel)]="quickname">
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field class="signup-email">
+        <input matInput
+               placeholder="Email"
+               [(ngModel)]="email">
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field class="signup-password">
+        <input matInput
+               type="password"
+               placeholder="Пароль"
+               [(ngModel)]="password">
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field class="signup-password-twice">
+        <input matInput
+               type="password"
+               placeholder="Пароль еще раз"
+               [(ngModel)]="passwordTwice">
+    </mat-form-field>
+
+    <br/>
+
+    <button mat-raised-button color="accent" (click)="onSignup($event)">Зарегистрироваться</button>
+</div>

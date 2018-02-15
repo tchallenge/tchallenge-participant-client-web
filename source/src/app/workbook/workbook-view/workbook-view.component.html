@@ -1,0 +1,19 @@
+<div class="workbook-view" *ngIf="workbook">
+
+    <div class="container assignment-list-container">
+
+        <mat-card *ngIf="workbook.status === 'SUBMITTED'" class="workbook-submitted">
+            <mat-card-title>Ваш результат: {{corrects}} из {{total}}</mat-card-title>
+        </mat-card>
+
+        <app-assignment  *ngFor="let assignment of workbook.assignments"
+                         [assignment]="assignment"
+                         [classified]="workbook.status !== 'SUBMITTED'"
+                         [workbookId]="workbook.id">
+        </app-assignment>
+    </div>
+
+    <br/>
+
+    <button *ngIf="workbook.status !== 'SUBMITTED'" mat-raised-button color="accent" (click)="onSubmit($event)">Отправить на проверку</button>
+</div>

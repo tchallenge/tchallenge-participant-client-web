@@ -1,0 +1,24 @@
+<div class="container login-view">
+
+    <mat-form-field class="login-email">
+        <input matInput
+               placeholder="Email"
+               [(ngModel)]="email">
+    </mat-form-field>
+
+    <br/>
+
+    <mat-form-field class="login-password">
+        <input matInput
+               type="password"
+               placeholder="Пароль"
+               [(ngModel)]="password">
+    </mat-form-field>
+
+    <br/>
+
+    <button mat-raised-button color="accent" (click)="onLogin($event)">Войти</button>
+
+    <br/>
+    <a href="./signup">У меня еще нет аккаунта</a>
+</div>
