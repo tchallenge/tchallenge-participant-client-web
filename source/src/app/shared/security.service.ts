@@ -2,13 +2,15 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {SecurityToken} from './security-token.model';
 import {Observable} from 'rxjs/Observable';
+import {ConfigurationService} from './configuration.service';
 
 @Injectable()
 export class SecurityService {
 
     private storage = localStorage;
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient,
+                private configurationService: ConfigurationService) {
 
     }
 
@@ -26,7 +28,8 @@ export class SecurityService {
             email: email,
             password: password
         };
-        const observable = this.http.post<SecurityToken>('http://localhost:4567/security/tokens/', invoice);
+        const url = this.configurationService.getApiBaseUrl() + '/security/tokens/';
+        const observable = this.http.post<SecurityToken>(url, invoice);
         observable.subscribe(token => {
             this.storeTokenPayload(token.payload);
             done();
@@ -34,18 +37,21 @@ export class SecurityService {
     }
 
     logout(done): void {
-        const observable = this.http.put('http://localhost:4567/security/tokens/current/delete', {});
+        const url = this.configurationService.getApiBaseUrl() + '/security/tokens/current/delete';
+        const observable = this.http.put(url, {});
         observable.subscribe(() => {this.removeTokenPayload(); done(); }, () => {this.removeTokenPayload();  done();});
     }
 
     signup(quickname: string, email: string, password: string): Observable<{}> {
+        const backlinkTemplate = this.configurationService.getClientBaseUrl() + '/user-security-voucher?payload={{payload}}';
         const invoice = {
             email: email,
             quickname: quickname,
             password: password,
-            backlinkTemplate: 'http://localhost:4200/user-security-voucher?payload={{payload}}'
+            backlinkTemplate: backlinkTemplate
         };
-        return this.http.post<SecurityToken>('http://localhost:4567/security/registrations/', invoice);
+        const url = this.configurationService.getApiBaseUrl() + '/security/registrations/';
+        return this.http.post<SecurityToken>(url, invoice);
     }
 
     useVoucher(payload: string, done, fail) {
@@ -53,7 +59,8 @@ export class SecurityService {
             method: 'VOUCHER',
             voucherPayload: payload,
         };
-        const observable = this.http.post<SecurityToken>('http://localhost:4567/security/tokens/', invoice);
+        const url = this.configurationService.getApiBaseUrl() + '/security/tokens/';
+        const observable = this.http.post<SecurityToken>(url, invoice);
         observable.subscribe(token => {
             this.storeTokenPayload(token.payload);
             done();

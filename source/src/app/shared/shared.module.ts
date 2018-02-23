@@ -6,6 +6,7 @@ import {RouterModule} from '@angular/router';
 import {AuthInterceptorService} from './auth-interceptor.service';
 import {SecurityService} from './security.service';
 import {SecurityGuard} from './security.guard';
+import {ConfigurationService} from './configuration.service';
 
 @NgModule({
     imports: [
@@ -20,6 +21,7 @@ import {SecurityGuard} from './security.guard';
     ],
     providers: [
         AuthInterceptorService,
+        ConfigurationService,
         SecurityService,
         SecurityGuard
     ],
