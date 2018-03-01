@@ -11,3 +11,10 @@ html, body {
     align-items: center;
     flex: 1;
 }
+
+.mat-card-actions.centered-buttons {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

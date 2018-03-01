@@ -33,6 +33,11 @@ export class LoginViewComponent implements OnInit {
         });
     }
 
+    onNoAccountClicked($event: Event): void {
+        $event.preventDefault();
+        this.router.navigate(['/signup']);
+    }
+
     private leave(): void {
         this.router.navigate(['/']);
     }
