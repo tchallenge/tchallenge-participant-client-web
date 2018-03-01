@@ -9,3 +9,9 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+.option .mat-list-item-content {
+
+    padding: 0;
+    background-color: aquamarine;
+}

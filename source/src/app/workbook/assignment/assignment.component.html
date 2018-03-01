@@ -1,4 +1,4 @@
-<mat-card class="assignment">
+<mat-card class="assignment-container">
 
     <mat-card-title>
         Задача {{assignment.index}}
@@ -8,8 +8,10 @@
         <p>{{assignment.problem.introduction}}</p>
         <p>{{assignment.problem.question}}</p>
         <div class="assignment-problem-snippets" *ngIf="assignment.problem.snippets">
-            <pre *ngFor="let snippet of assignment.problem.snippets">{{snippet.content}}</pre>
+            <pre *ngFor="let snippet of assignment.problem.snippets" class="code">{{snippet.content}}</pre>
         </div>
         <app-option-group [problemWithSolution]="assignment" [assignmentIndex]="assignment.index" [workbookId]="workbookId" [classified]="classified"></app-option-group>
     </mat-card-content>
 </mat-card>
+<br/>
+<mat-divider></mat-divider>

@@ -1,24 +1,28 @@
-<div class="container login-view">
+<div class="login-view-container">
 
-    <mat-form-field class="login-email">
-        <input matInput
-               placeholder="Email"
-               [(ngModel)]="email">
-    </mat-form-field>
+    <mat-card class="login-card">
+        <mat-card-title>Вход для участников</mat-card-title>
 
-    <br/>
+        <mat-card-content>
+                    <mat-form-field class="login-form-field login-email">
+                        <input matInput
+                               name="emailInput"
+                               placeholder="Email"
+                               [(ngModel)]="email">
+                    </mat-form-field>
+                    <mat-form-field class="login-form-field login-password">
+                        <input matInput
+                               name="passwordInput"
+                               type="password"
+                               placeholder="Пароль"
+                               [(ngModel)]="password">
+                    </mat-form-field>
+        </mat-card-content>
 
-    <mat-form-field class="login-password">
-        <input matInput
-               type="password"
-               placeholder="Пароль"
-               [(ngModel)]="password">
-    </mat-form-field>
-
-    <br/>
-
-    <button mat-raised-button color="accent" (click)="onLogin($event)">Войти</button>
-
-    <br/>
-    <a href="./signup">У меня еще нет аккаунта</a>
+        <mat-card-actions>
+            <button mat-flat-button color="accent" (click)="onLogin($event)">Войти</button>
+            <br/>
+            <button mat-button routerLink="signup">У меня еще нет аккаунта</button>
+        </mat-card-actions>
+    </mat-card>
 </div>

@@ -1,4 +1,11 @@
-<h2>T-Challenge</h2><button *ngIf="isAuthenticated()" mat-button (click)="onLogout()">Выйти</button>
-<hr/>
-<br/>
-<router-outlet></router-outlet>
+<div class="layout-container">
+    <mat-toolbar class="layout-header-toolbar" color="accent">
+        <span>T-Challenge</span>
+        <button mat-button (click)="onLogout()">Выйти</button>
+    </mat-toolbar>
+    <div class="container content-container">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<!-- *ngIf="isAuthenticated()"  -->
