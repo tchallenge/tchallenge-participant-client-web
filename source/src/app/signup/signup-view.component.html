@@ -1,38 +1,41 @@
-<div class="container signup-view">
+<div class="signup-view-container">
 
-    <mat-form-field class="signup-quickname">
-        <input matInput
-               placeholder="Имя"
-               [(ngModel)]="quickname">
-    </mat-form-field>
+    <mat-card class="signup-card">
+        <mat-card-title>Регистрация</mat-card-title>
 
-    <br/>
+        <mat-card-content class="centered-buttons">
 
-    <mat-form-field class="signup-email">
-        <input matInput
-               placeholder="Email"
-               [(ngModel)]="email">
-    </mat-form-field>
+            <mat-form-field style="margin-top: 20px" class="signup-form-field signup-quickname">
+                <input matInput
+                       placeholder="Имя"
+                       [(ngModel)]="quickname">
+            </mat-form-field>
 
-    <br/>
+            <mat-form-field class="signup-form-field signup-email">
+                <input matInput
+                       placeholder="Email"
+                       [(ngModel)]="email">
+            </mat-form-field>
 
-    <mat-form-field class="signup-password">
-        <input matInput
-               type="password"
-               placeholder="Пароль"
-               [(ngModel)]="password">
-    </mat-form-field>
+            <mat-form-field class="signup-form-field signup-password">
+                <input matInput
+                       type="password"
+                       placeholder="Пароль"
+                       [(ngModel)]="password">
+            </mat-form-field>
 
-    <br/>
+            <mat-form-field style="margin-bottom: 20px" class="signup-form-field signup-password-twice">
+                <input matInput
+                       type="password"
+                       placeholder="Пароль еще раз"
+                       [(ngModel)]="passwordTwice">
+            </mat-form-field>
 
-    <mat-form-field class="signup-password-twice">
-        <input matInput
-               type="password"
-               placeholder="Пароль еще раз"
-               [(ngModel)]="passwordTwice">
-    </mat-form-field>
+        </mat-card-content>
 
-    <br/>
-
-    <button mat-raised-button color="accent" (click)="onSignup($event)">Зарегистрироваться</button>
+        <mat-card-actions class="centered-buttons">
+            <button mat-flat-button color="accent" (click)="onSignup($event)">Зарегистрироваться</button>
+            <button mat-button (click)="onHasAccountClicked($event)" id="hasAccountLink">Уже зарегистрированы?</button>
+        </mat-card-actions>
+    </mat-card>
 </div>

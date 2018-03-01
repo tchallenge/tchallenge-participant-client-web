@@ -39,6 +39,11 @@ export class SignupViewComponent implements OnInit {
         });
     }
 
+    onHasAccountClicked($event: Event): void {
+        $event.preventDefault();
+        this.router.navigate(['/login']);
+    }
+
     private leave(): void {
         this.router.navigate(['/']);
     }
