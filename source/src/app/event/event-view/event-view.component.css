@@ -1,9 +1,19 @@
-.container {
+.event-view-container {
+
+    margin-top: 80px;
+
     display: flex;
     flex-direction: column;
-    width: 400px;
+    align-items: center;
+    justify-items: center;
+    flex: 1;
 }
 
-.container > * {
-    width: 100%;
+.event-card.mat-card {
+
+    box-shadow: none;
+}
+
+.event-form-field {
+    width: 400px;
 }

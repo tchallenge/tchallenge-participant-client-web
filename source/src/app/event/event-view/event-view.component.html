@@ -1,16 +1,24 @@
-<div class="container event-view">
+<div class="event-view-container">
 
-    <mat-form-field class="event-specializations" color="accent">
-        <mat-select placeholder="Ваша специализация" [(value)]="selectedSpecialization">
-            <mat-option *ngFor="let spec of availableSpecializations" [value]="spec">{{spec.caption}}</mat-option>
-        </mat-select>
-    </mat-form-field>
+    <mat-card class="event-card">
+        <mat-card-title>Заявка на тест</mat-card-title>
 
-    <mat-form-field class="event-maturities" color="accent">
-        <mat-select placeholder="Ваш уровень" [(value)]="selectedMaturity">
-            <mat-option *ngFor="let spec of availableMaturities" [value]="spec">{{spec.caption}}</mat-option>
-        </mat-select>
-    </mat-form-field>
+        <mat-card-content class="centered-buttons">
+            <mat-form-field style="margin-top: 20px" class="event-form-field event-specializations">
+                <mat-select placeholder="Ваша специализация" [(value)]="selectedSpecialization">
+                    <mat-option *ngFor="let spec of availableSpecializations" [value]="spec">{{spec.caption}}</mat-option>
+                </mat-select>
+            </mat-form-field>
 
-    <button mat-raised-button color="accent" (click)="onApplyClicked($event)">Пройти тест</button>
+            <mat-form-field  style="margin-bottom: 20px" class="event-form-field event-maturities">
+                <mat-select placeholder="Ваш уровень" [(value)]="selectedMaturity">
+                    <mat-option *ngFor="let spec of availableMaturities" [value]="spec">{{spec.caption}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </mat-card-content>
+
+        <mat-card-actions class="centered-buttons">
+            <button mat-flat-button color="accent" (click)="onApplyClicked($event)">Пройти тест</button>
+        </mat-card-actions>
+    </mat-card>
 </div>

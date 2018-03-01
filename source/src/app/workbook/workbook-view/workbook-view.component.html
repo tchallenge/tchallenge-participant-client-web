@@ -15,5 +15,8 @@
 
     <br/>
 
-    <button *ngIf="workbook.status !== 'SUBMITTED'" mat-raised-button color="accent" (click)="onSubmit($event)">Отправить на проверку</button>
+    <div class="centered-buttons" style="margin-bottom: 30px">
+        <button *ngIf="workbook.status !== 'SUBMITTED'" mat-flat-button color="accent" (click)="onSubmit($event)">Отправить на проверку</button>
+    </div>
 </div>
+

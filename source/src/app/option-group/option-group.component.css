@@ -1,5 +1,5 @@
 .correct {
-    background-color: aquamarine;
+    color: deeppink;
 }
 
 .option-text {
@@ -13,5 +13,4 @@
 .option .mat-list-item-content {
 
     padding: 0;
-    background-color: aquamarine;
 }

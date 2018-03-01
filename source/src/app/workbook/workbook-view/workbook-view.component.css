@@ -1,5 +1,10 @@
-.workbook-submitted {
-    width: 550px;
+.workbook-submitted.mat-card {
 
-    margin-bottom: 40px;
+    width: 500px;
+
+    margin-bottom: 0px;
+
+    box-shadow: none;
+
+    color: deeppink;
 }

@@ -35,7 +35,7 @@ export class SignupViewComponent implements OnInit {
         this.securityService.signup(this.quickname, this.email, this.password).subscribe(() => {
             this.router.navigate(['/registered']);
         }, () => {
-            alert('Произошла ошибка. Пожалуйста, повторите попытку позже');
+            alert('Произошла ошибка. Пожалуйста, заполните все поля и повторите попытку');
         });
     }
 

@@ -33,9 +33,16 @@ export class EventViewComponent implements OnInit {
 
     ngOnInit(): void {
         if (!this.securityService.isAuthenticated()) {
-            this.router.navigate(['/login']);
+            this.router.navigate(['/signup']);
             return;
         }
+        this.availableMaturities = [
+            {
+                id: 'INTERMEDIATE',
+                caption: 'Разработчик'
+            }
+        ];
+        /*
         this.availableMaturities = [
             {
                 id: 'JUNIOR',
@@ -54,6 +61,7 @@ export class EventViewComponent implements OnInit {
                 caption: 'Эксперт'
             }
         ];
+        */
         this.availableSpecializations = [];
         this.eventService.retrieveSpecializations().subscribe(specializations => {
 
@@ -69,7 +77,7 @@ export class EventViewComponent implements OnInit {
                             const spec: Specialization = specializations.filter(sp => sp.id === s)[0];
                             this.availableSpecializations.push(spec);
                         });
-                        this.selectedMaturity = this.availableMaturities[1];
+                        this.selectedMaturity = this.availableMaturities[0];
                         this.selectedSpecialization = this.availableSpecializations[0];
                     });
                 });
