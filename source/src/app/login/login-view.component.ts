@@ -29,7 +29,7 @@ export class LoginViewComponent implements OnInit {
         this.securityService.login(this.email, this.password, () => {
             this.leave();
         }, () => {
-            alert('too bad');
+            alert('Указанные данные учетной записи не верны');
         });
     }
 
