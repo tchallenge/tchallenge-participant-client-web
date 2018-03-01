@@ -8,6 +8,7 @@ import {SignupViewComponent} from './signup/signup-view.component';
 import {VoucherHandleViewComponent} from './voucher-handle-view/voucher-handle-view.component';
 import {SecurityGuard} from './shared/security.guard';
 import {ProblemCreateComponent} from './problem/create/problem-create.component';
+import {RegisteredViewComponent} from './registered/registered-view.component';
 
 const appRoutes: Routes = [
     {
@@ -33,6 +34,10 @@ const appRoutes: Routes = [
             {
                 path: 'login',
                 component: LoginViewComponent
+            },
+            {
+                path: 'registered',
+                component: RegisteredViewComponent
             },
             {
                 path: 'signup',

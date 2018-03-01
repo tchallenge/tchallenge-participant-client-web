@@ -14,12 +14,14 @@ import {AuthInterceptorService} from './shared/auth-interceptor.service';
 import {LoginViewComponent} from './login/login-view.component';
 import {SignupViewComponent} from './signup/signup-view.component';
 import {VoucherHandleViewComponent} from './voucher-handle-view/voucher-handle-view.component';
+import {RegisteredViewComponent} from './registered/registered-view.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         LayoutComponent,
         LoginViewComponent,
+        RegisteredViewComponent,
         SignupViewComponent,
         VoucherHandleViewComponent
     ],
