@@ -16,8 +16,9 @@ export class VoucherHandleViewComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.route.params.subscribe((params) => {
+        this.route.queryParams.subscribe((params) => {
             const payload = params['payload'];
+            console.log(payload);
             this.securityService.useVoucher(payload, () => this.leave(), () => this.leave());
         });
     }

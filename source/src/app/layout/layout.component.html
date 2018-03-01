@@ -1,11 +1,9 @@
 <div class="layout-container">
     <mat-toolbar class="layout-header-toolbar" color="accent">
-        <span class="logo">T-Challenge</span>
+        <span class="logo" (click)="onHome()" style="cursor: pointer">T-Challenge</span>
         <button *ngIf="isAuthenticated()" class="logout" mat-button (click)="onLogout()">Выйти</button>
     </mat-toolbar>
     <div class="container content-container">
         <router-outlet></router-outlet>
     </div>
 </div>
-
-<!--   -->

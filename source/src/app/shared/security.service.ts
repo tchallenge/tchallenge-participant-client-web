@@ -44,7 +44,7 @@ export class SecurityService {
     }
 
     signup(quickname: string, email: string, password: string): Observable<{}> {
-        const backlinkTemplate = this.configurationService.getClientBaseUrl() + '/user-security-voucher?payload={{payload}}';
+        const backlinkTemplate = this.configurationService.getClientBaseUrl() + '/use-security-voucher?payload={{payload}}';
         const invoice = {
             email: email,
             quickname: quickname,
@@ -60,9 +60,11 @@ export class SecurityService {
             method: 'VOUCHER',
             voucherPayload: payload,
         };
+        console.log('used' + payload);
         const url = this.configurationService.getApiBaseUrl() + '/security/tokens/';
         const observable = this.http.post<SecurityToken>(url, invoice);
         observable.subscribe(token => {
+            console.log('created' + token.payload);
             this.storeTokenPayload(token.payload);
             done();
         }, () => fail());

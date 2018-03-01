@@ -18,6 +18,10 @@ export class LayoutComponent {
         return this.securityService.isAuthenticated();
     }
 
+    onHome(): void {
+        this.router.navigate(['/']);
+    }
+
     onLogout(): void {
         this.securityService.logout(() => this.router.navigate(['login']));
     }
