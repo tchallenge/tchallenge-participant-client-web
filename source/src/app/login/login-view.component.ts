@@ -1,6 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SecurityService} from '../shared/security.service';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
+import {Workbook} from '../workbook/workbook.model';
 
 @Component({
     selector: 'app-login-view',
@@ -39,6 +42,8 @@ export class LoginViewComponent implements OnInit {
     }
 
     private leave(): void {
-        this.router.navigate(['/']);
+        this.securityService
+            .checkAccessToPreviousBook()
+            .subscribe((w) => this.router.navigate(['/workbooks/' + w.id]), () => this.router.navigate(['/']));
     }
 }

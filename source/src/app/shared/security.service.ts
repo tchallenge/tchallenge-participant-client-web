@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {SecurityToken} from './security-token.model';
 import {Observable} from 'rxjs/Observable';
 import {ConfigurationService} from './configuration.service';
+import {Workbook} from '../workbook/workbook.model';
 
 @Injectable()
 export class SecurityService {
@@ -65,6 +66,11 @@ export class SecurityService {
             this.storeTokenPayload(token.payload);
             done();
         }, () => fail());
+    }
+
+    checkAccessToPreviousBook(): Observable<Workbook> {
+        const url = this.configurationService.getApiBaseUrl() + '/workbooks/' + (this.storage.getItem('lastWorkbookId') || 'no-id');
+        return this.http.get<Workbook>(url);
     }
 
     private loadTokenPayload(): string {

@@ -20,6 +20,8 @@ export class WorkbookViewComponent implements OnInit {
 
     @ViewChildren(Assignment) private assignmentComponents: AssignmentComponent;
 
+    private storage = localStorage;
+
     constructor(private route: ActivatedRoute,
                 private workbookService: WorkbookService,
                 private router: Router,
@@ -42,14 +44,18 @@ export class WorkbookViewComponent implements OnInit {
         this.workbookService.updateStatus(this.workbook.id, 'SUBMITTED').subscribe(() => {
             this.reinit(this.workbook.id);
             location.reload();
-//            this.router.navigate(['workbooks/' + this.workbook.id + '?timestamp=x']);
-        });
+        }, () => alert('Пожалуйста, заполните ответы для всех предложенных задач'));
+    }
+
+    onOnceAgain(): void {
+        this.router.navigate(['/']);
     }
 
     private reinit(id: string): void {
         this.corrects = 0;
         this.total = 0;
         this.workbookService.retrieveById(id).subscribe(workbook => {
+            this.storage.setItem('lastWorkbookId', workbook.id);
             this.workbook = workbook;
             this.total = workbook.assignments.length;
             if (workbook.status === 'SUBMITTED') {
