@@ -31,7 +31,9 @@
 
 .custom-footer {
 
+    /*
     background-color: green;
+     */
     height: 75px;
     grid-area: footer-area;
 }
