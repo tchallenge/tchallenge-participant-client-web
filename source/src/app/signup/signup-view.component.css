@@ -1,21 +1,11 @@
-.signup-view-container {
-
-    margin-top: 80px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    flex: 1;
-}
-
-.signup-card.mat-card {
-
-    box-shadow: none;
+:host {
+    align-self: center;
+    background-color: aquamarine;
 }
 
 .signup-form-field {
-    width: 400px;
+
+    width: 300px;
 }
 
 #hasAccountLink {
