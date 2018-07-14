@@ -2,33 +2,45 @@
 
 html, body {
 
-    background: #eeeeee;
-
     margin: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
+    padding: 0;
+    background: gray;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
 }
 
-.mat-card-actions.centered-buttons {
+body {
 
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 25% auto 25%;
+    grid-template-rows: auto;
+    grid-template-areas:
+            ". application-area .";
+}
+
+.center-text-container {
+    text-align: center;
+}
+
+router-outlet {
+    display: none;
+}
+
+.separated-vertical-block {
+
+    margin-top: 30px;
+}
+
+.centered-item-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.mat-card-content.centered-buttons {
+.block-title {
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.centered-buttons {
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: 24px;
+    font-weight: 400;
 }

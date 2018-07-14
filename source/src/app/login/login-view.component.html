@@ -1,27 +1,28 @@
-<div class="login-view-container">
 
-    <mat-card class="login-card">
-        <mat-card-title>Вход для участников</mat-card-title>
+<div class="centered-item-container separated-vertical-block">
+    <span class="block-title">Вход для участников</span>
+</div>
 
-        <mat-card-content class="centered-buttons">
-                    <mat-form-field style="margin-top: 20px" class="login-form-field login-email">
-                        <input matInput
-                               name="emailInput"
-                               placeholder="Email"
-                               [(ngModel)]="email">
-                    </mat-form-field>
-                    <mat-form-field  style="margin-bottom: 20px" class="login-form-field login-password">
-                        <input matInput
-                               name="passwordInput"
-                               type="password"
-                               placeholder="Пароль"
-                               [(ngModel)]="password">
-                    </mat-form-field>
-        </mat-card-content>
+<div class="centered-item-container separated-vertical-block">
 
-        <mat-card-actions class="centered-buttons">
-            <button mat-flat-button color="accent" (click)="onLogin($event)">Войти</button>
-            <button mat-button (click)="onNoAccountClicked($event)" id="noAccountLink">Еще не зарегистрированы?</button>
-        </mat-card-actions>
-    </mat-card>
+        <mat-form-field class="login-form-field login-email centered-item">
+            <input matInput
+                   name="emailInput"
+                   placeholder="Email"
+                   [(ngModel)]="email">
+        </mat-form-field>
+
+        <mat-form-field class="login-form-field login-password centered-item">
+            <input matInput
+                   name="passwordInput"
+                   type="password"
+                   placeholder="Пароль"
+                   [(ngModel)]="password">
+        </mat-form-field>
+</div>
+
+<div class="centered-item-container separated-vertical-block">
+
+    <button mat-flat-button class="centered-item" color="accent" (click)="onLogin($event)">Войти</button>
+    <button mat-button class="centered-item" (click)="onNoAccountClicked($event)" id="noAccountLink">Еще не зарегистрированы?</button>
 </div>
