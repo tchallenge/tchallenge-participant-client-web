@@ -1,19 +1,8 @@
-.event-view-container {
-
-    margin-top: 80px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    flex: 1;
-}
-
-.event-card.mat-card {
-
-    box-shadow: none;
+:host {
+    align-self: center;
 }
 
 .event-form-field {
-    width: 400px;
+
+    width: 300px;
 }

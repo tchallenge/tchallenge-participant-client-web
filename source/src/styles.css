@@ -25,20 +25,8 @@ body {
 
     body {
 
-        min-height: 100vh;
-
-        display: grid;
-
         grid-template-columns: 25% auto 25%;
-        grid-template-rows: auto;
-        grid-template-areas:
-                ". application-area .";
-
     }
-}
-
-.center-text-container {
-    text-align: center;
 }
 
 router-outlet {
@@ -60,4 +48,5 @@ router-outlet {
 
     font-size: 24px;
     font-weight: 400;
+    margin-bottom: 20px;
 }

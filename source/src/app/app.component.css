@@ -3,4 +3,5 @@
     background: #ffffff;
     grid-area: application-area;
 
+    min-height: 100vh;
 }
