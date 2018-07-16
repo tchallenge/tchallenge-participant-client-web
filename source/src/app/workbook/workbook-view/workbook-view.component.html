@@ -1,23 +1,28 @@
-<div class="workbook-view" *ngIf="workbook">
+<div *ngIf="workbook" class="workbook">
 
-    <div class="container assignment-list-container">
+    <div *ngIf="workbook.status === 'SUBMITTED'" class="workbook-summary-info centered-item-container separated-vertical-block">
+        <span class="block-title">Баллы: {{corrects}} из {{total}}</span>
+    </div>
 
-        <mat-card *ngIf="workbook.status === 'SUBMITTED'" class="workbook-submitted">
-            <mat-card-title>Ваш результат: {{corrects}} из {{total}}</mat-card-title>
-        </mat-card>
+    <div class="centered-item-container">
 
         <app-assignment  *ngFor="let assignment of workbook.assignments"
+                         class="centered-item"
+                         [last]="assignment.index == workbook.assignments.length"
                          [assignment]="assignment"
                          [classified]="workbook.status !== 'SUBMITTED'"
                          [workbookId]="workbook.id">
         </app-assignment>
     </div>
 
-    <br/>
+    <div class="centered-item-container separated-vertical-block">
 
-    <div class="centered-buttons" style="margin-bottom: 30px">
-        <button *ngIf="workbook.status !== 'SUBMITTED'" mat-flat-button color="accent" (click)="onSubmit($event)">Отправить на проверку</button>
-        <button *ngIf="workbook.status === 'SUBMITTED'" mat-flat-button color="accent" (click)="onOnceAgain($event)">Пройти тест еще раз</button>
+        <button *ngIf="workbook.status !== 'SUBMITTED'" class="centered-item" mat-flat-button color="accent" (click)="onSubmit($event)">Отправить на проверку</button>
+        <button *ngIf="workbook.status === 'SUBMITTED'" class="centered-item" mat-flat-button color="accent" (click)="onOnceAgain($event)">Пройти тест еще раз</button>
+    </div>
+
+    <div class="workbook-qr centered-item-container separated-vertical-block">
+        <p class="workbook-textcode">Рабочая тетрадь {{workbook.textcode}}</p>
+        <qrcode [qrdata]="workbook.coworkerLink" [size]="256" [level]="'M'"></qrcode>
     </div>
 </div>
-

@@ -57,6 +57,7 @@ export class WorkbookViewComponent implements OnInit {
         this.workbookService.retrieveById(id).subscribe(workbook => {
             this.storage.setItem('lastWorkbookId', workbook.id);
             this.workbook = workbook;
+            this.workbook.coworkerLink = 'http://coworker.t-challenge.ru/navigate-to-workbook/' + workbook.id;
             this.total = workbook.assignments.length;
             if (workbook.status === 'SUBMITTED') {
                 workbook.assignments.forEach((a) => {

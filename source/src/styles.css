@@ -6,6 +6,7 @@ html, body {
     padding: 0;
     background: #eeeeee;
     font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 14px;
 }
 
 body {
@@ -14,7 +15,7 @@ body {
 
     display: grid;
 
-    grid-template-columns: 0 auto 0;
+    grid-template-columns: 0 100% 0;
     grid-template-rows: auto;
     grid-template-areas:
             ". application-area .";
@@ -25,7 +26,7 @@ body {
 
     body {
 
-        grid-template-columns: 25% auto 25%;
+        grid-template-columns: auto 700px auto;
     }
 }
 
@@ -49,4 +50,18 @@ router-outlet {
     font-size: 24px;
     font-weight: 400;
     margin-bottom: 10px;
+}
+
+.standard-form-field {
+
+    width: 80%;
+    max-width: 300px;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .standard-form-field {
+
+        max-width: 400px;
+    }
 }

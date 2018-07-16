@@ -4,13 +4,13 @@
 
 <div class="centered-item-container separated-vertical-block">
 
-    <mat-form-field class="event-form-field event-specializations centered-item">
+    <mat-form-field class="standard-form-field event-specializations centered-item">
         <mat-select placeholder="Ваша специализация" [(value)]="selectedSpecialization">
             <mat-option *ngFor="let spec of availableSpecializations" [value]="spec">{{spec.caption}}</mat-option>
         </mat-select>
     </mat-form-field>
 
-    <mat-form-field class="event-form-field event-maturities centered-item">
+    <mat-form-field class="standard-form-field event-maturities centered-item">
         <mat-select placeholder="Ваш уровень" [(value)]="selectedMaturity">
             <mat-option *ngFor="let spec of availableMaturities" [value]="spec">{{spec.caption}}</mat-option>
         </mat-select>
