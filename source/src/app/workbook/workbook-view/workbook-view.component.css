@@ -1,10 +1,5 @@
-.workbook-submitted.mat-card {
+.workbook-summary-info .block-title {
 
-    width: 500px;
-
-    margin-bottom: 0px;
-
-    box-shadow: none;
-
+    font-size: 32px;
     color: deeppink;
 }

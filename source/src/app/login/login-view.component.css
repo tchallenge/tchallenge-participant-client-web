@@ -1,25 +1,11 @@
-.login-view-container {
-
-    margin-top: 80px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    flex: 1;
-}
-
-.login-card.mat-card {
-
-    box-shadow: none;
-}
-
-.login-form-field {
-    width: 400px;
+:host {
+    align-self: center;
+    /*
+    background-color: aquamarine;
+    */
 }
 
 #noAccountLink {
 
     margin-top: 20px;
 }
-

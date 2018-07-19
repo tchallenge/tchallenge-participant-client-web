@@ -1,24 +1,23 @@
-<div class="event-view-container">
+<div class="centered-item-container separated-vertical-block">
+    <span class="block-title">Заявка на тест</span>
+</div>
 
-    <mat-card class="event-card">
-        <mat-card-title>Заявка на тест</mat-card-title>
+<div class="centered-item-container separated-vertical-block">
 
-        <mat-card-content class="centered-buttons">
-            <mat-form-field style="margin-top: 20px" class="event-form-field event-specializations">
-                <mat-select placeholder="Ваша специализация" [(value)]="selectedSpecialization">
-                    <mat-option *ngFor="let spec of availableSpecializations" [value]="spec">{{spec.caption}}</mat-option>
-                </mat-select>
-            </mat-form-field>
+    <mat-form-field class="standard-form-field event-specializations centered-item">
+        <mat-select placeholder="Ваша специализация" [(value)]="selectedSpecialization">
+            <mat-option *ngFor="let spec of availableSpecializations" [value]="spec">{{spec.caption}}</mat-option>
+        </mat-select>
+    </mat-form-field>
 
-            <mat-form-field  style="margin-bottom: 20px" class="event-form-field event-maturities">
-                <mat-select placeholder="Ваш уровень" [(value)]="selectedMaturity">
-                    <mat-option *ngFor="let spec of availableMaturities" [value]="spec">{{spec.caption}}</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </mat-card-content>
+    <mat-form-field class="standard-form-field event-maturities centered-item">
+        <mat-select placeholder="Ваш уровень" [(value)]="selectedMaturity">
+            <mat-option *ngFor="let spec of availableMaturities" [value]="spec">{{spec.caption}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
 
-        <mat-card-actions class="centered-buttons">
-            <button mat-flat-button color="accent" (click)="onApplyClicked($event)">Пройти тест</button>
-        </mat-card-actions>
-    </mat-card>
+<div class="centered-item-container separated-vertical-block">
+
+    <button mat-flat-button class="centered-item" color="accent" (click)="onApplyClicked($event)">Пройти тест</button>
 </div>

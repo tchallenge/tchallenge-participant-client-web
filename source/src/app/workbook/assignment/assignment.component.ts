@@ -9,6 +9,7 @@ import {Assignment} from '../assignment.model';
 })
 export class AssignmentComponent {
 
+    @Input() last: boolean;
     @Input() assignment: Assignment;
     @Input() classified: boolean;
     @Input() workbookId: string;

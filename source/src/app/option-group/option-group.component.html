@@ -1,20 +1,22 @@
-<div class="problem-options" *ngIf="problemWithSolution.problem.options">
-    <mat-radio-group *ngIf="problemWithSolution.problem.expectation === 'SINGLE'">
-        <mat-list>
-            <mat-list-item *ngFor="let option of problemWithSolution.problem.options" class="option">
-                <mat-radio-button [disabled]="!classified" [checked]="flags[option.index - 1]" (change)="onOptionChanged(option.index)" value="{{option.index}}">
-                    <span class="option-text" [ngClass]="{'correct' : option.correct}">{{option.textcode}}: {{option.content}}</span>
-                </mat-radio-button>
-            </mat-list-item>
-        </mat-list>
-    </mat-radio-group>
-    <div *ngIf="problemWithSolution.problem.expectation === 'MULTIPLE'">
-        <mat-list>
-            <mat-list-item *ngFor="let option of problemWithSolution.problem.options" class="option">
-                <mat-checkbox [disabled]="!classified" [checked]="flags[option.index - 1]" (change)="onOptionChanged(option.index)">
-                    <span [ngClass]="{'correct' : option.correct}">{{option.textcode}}: {{option.content}}</span>
-                </mat-checkbox>
-            </mat-list-item>
-        </mat-list>
+<div *ngIf="problemWithSolution.problem.options" class="options-holder">
+    <div class="option-group">
+        <mat-radio-group *ngIf="problemWithSolution.problem.expectation === 'SINGLE'">
+            <mat-list>
+                <mat-list-item *ngFor="let option of problemWithSolution.problem.options" class="option">
+                    <mat-radio-button [disabled]="!classified" [checked]="flags[option.index - 1]" (change)="onOptionChanged(option.index)" value="{{option.index}}">
+                        <span class="option-text" [ngClass]="{'correct' : option.correct}">{{option.textcode}}: {{option.content}}</span>
+                    </mat-radio-button>
+                </mat-list-item>
+            </mat-list>
+        </mat-radio-group>
+        <div *ngIf="problemWithSolution.problem.expectation === 'MULTIPLE'">
+            <mat-list>
+                <mat-list-item *ngFor="let option of problemWithSolution.problem.options" class="option">
+                    <mat-checkbox [disabled]="!classified" [checked]="flags[option.index - 1]" (change)="onOptionChanged(option.index)">
+                        <span class="option-text" [ngClass]="{'correct' : option.correct}">{{option.textcode}}: {{option.content}}</span>
+                    </mat-checkbox>
+                </mat-list-item>
+            </mat-list>
+        </div>
     </div>
 </div>

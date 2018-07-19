@@ -2,33 +2,66 @@
 
 html, body {
 
-    background: #eeeeee;
-
     margin: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
+    padding: 0;
+    background: #eeeeee;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-size: 14px;
 }
 
-.mat-card-actions.centered-buttons {
+body {
 
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 0 100% 0;
+    grid-template-rows: auto;
+    grid-template-areas:
+            ". application-area .";
+
+}
+
+@media only screen and (min-width: 768px) {
+
+    body {
+
+        grid-template-columns: auto 700px auto;
+    }
+}
+
+router-outlet {
+    display: none;
+}
+
+.separated-vertical-block {
+
+    margin-top: 30px;
+}
+
+.centered-item-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.mat-card-content.centered-buttons {
+.block-title {
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
-.centered-buttons {
+.standard-form-field {
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 80%;
+    max-width: 300px;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .standard-form-field {
+
+        max-width: 400px;
+    }
 }
